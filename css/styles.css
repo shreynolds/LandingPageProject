@@ -113,6 +113,24 @@ section {
     color: #fff;
 }
 
+/* Button Styles*/
+button {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+    border: none;
+}
+
+button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+button:focus{
+    outline: none;
+}
+
+
 
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
@@ -209,6 +227,7 @@ section.your-active-class {
 section.your-active-class h2{
     text-decoration: underline;
 }
+
 
 section.your-active-class .landing__container::before {
     opacity: 1;
