@@ -17,7 +17,9 @@
  * Define Global Variables
  * 
 */
-
+let sections = document.getElementsByTagName('section');
+let navMenu = document.getElementById('navbar__list');
+let toTop = document.getElementsByClassName('to_top');
 
 /**
  * End Global Variables
@@ -35,23 +37,20 @@
 
 // build the nav
 
-let sections = document.getElementsByTagName('section');
-console.log(sections);
 
-
-let navMenu = document.getElementById('navbar__list');
 
 for(let x = 0; x < sections.length; x++){
     listItem = document.createElement('li');
     let sectionName = sections[x].dataset.nav;
     listItem.innerText = sectionName;
     listItem.className = 'menu__link';
-    listItem.addEventListener('click', function(){ //should make this one generic function
+    listItem.id = 'nav_' + sections[x].id;
+    console.log(listItem);
+    listItem.addEventListener('click', function(){ 
         sections[x].scrollIntoView({behavior:'smooth'});
     })
     navMenu.appendChild(listItem);
 }
-let body = document.getElementsByTagName('body')[0];
 
 document.addEventListener('scroll', function(el){
     for (section of sections){
@@ -76,11 +75,19 @@ function setActiveClass(id){
     }
 }
 
-for (section of sections){
-    console.log(section.getBoundingClientRect());
+
+for (button of toTop){
+    button.addEventListener('click', function(){
+        window.scrollTo({top: 0 , behavior: 'smooth'});
+    })
 }
 
-
+navMenu.addEventListener('click', function(el){
+    idClicked = el.target.id;
+    sectionClicked = document.getElementById(idClicked);
+    console.log(el.target.id);
+    console.log(sectionClicked);
+})
 
 
 // Add class 'active' to section when near top of viewport
