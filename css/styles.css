@@ -228,7 +228,6 @@ section.your-active-class h2{
     text-decoration: underline;
 }
 
-
 section.your-active-class .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
