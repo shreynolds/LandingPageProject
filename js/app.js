@@ -17,9 +17,9 @@
  * Define Global Variables
  * 
 */
-let sections = document.getElementsByTagName('section');
-let navMenu = document.getElementById('navbar__list');
-let toTop = document.getElementsByClassName('to_top');
+const sections = document.getElementsByTagName('section');
+const navMenu = document.getElementById('navbar__list');
+const toTop = document.getElementsByClassName('to_top');
 
 /**
  * End Global Variables
@@ -59,7 +59,6 @@ function buildNav(){
         listItem.innerText = sectionName;
         listItem.className = 'menu__link';
         listItem.id = 'nav_' + sections[x].id;
-        console.log(listItem);
         listItem.addEventListener('click', function(){ 
             sections[x].scrollIntoView({behavior:'smooth'});
         })
